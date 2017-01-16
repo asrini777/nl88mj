@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex">
+
+    <title>Dream Horse</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Bootstrap/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="CSS/Home.css" rel="stylesheet" id="bootstrap-css">
+    <link href="CSS/skitter.css" type="text/css" media="all" rel="stylesheet" />
+    <link href="CSS/styles.css" type="text/css" media="all" rel="stylesheet" />
+    <script src="JQuery/jquery-1.10.2.min.js"></script>
+    <script src="JQuery/jquery.easing.1.3.js"></script>
+    <script src="JQuery/jquery.skitter.js"></script>
+    <script src="Bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var myVar;
+
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
+            else $('head > link').filter(':first').replaceWith(defaultCSS); 
+        }
+        function flydreamhorse(){ 
+              var rightpixels = $('#dreamhorse').css("right"); 
+              $('#dreamhorse').css("right", "-" + (parseInt(rightpixels.replace("px","").replace("-","")) +1) + "px")
+            }
+        $( document ).ready(function() {
+          for (var i = 0; i <= 1400; i++) {
+            //if(i==1400)
+            //  i=0;
+            myVar = setTimeout(flydreamhorse, 1000);
+          }
+         var audio = new Audio('Audios/horse.mp3');
+        audio.play();
+
+        $('.skitter-large').skitter({
+        responsive: {
+          small: {
+            animation: 'fade',
+            max_width: 768,
+            suffix: '-small'
+          },
+          medium: {
+            animation: 'directionRight',
+            max_width: 1024,
+            suffix: '-medium'
+          }
+        }
+      });
+   /*
+$(function() {
+  var currentTheme = '';
+  $('#change-theme').on('click', 'a', function(e) {
+    e.preventDefault();
+    var theme = 'skitter-' +  $(this).data('theme')
+    $('#change-theme a').removeClass('active');
+    $(this).addClass('active');
+    $('.skitter-large').removeClass(currentTheme).addClass(theme);
+    currentTheme = theme;
+  });
+
+  $('#change-animation').on('click', 'a', function(e) {
+    e.preventDefault();
+    var animation = $(this).data('animation');
+    $('#change-animation a').removeClass('active');
+    $(this).addClass('active');
+    $('.skitter-large').skitter('setAnimation', animation);
+    $('.skitter-large').skitter('next');
+  });
+
+  var animations = $('.skitter-large').skitter('getAnimations');
+  for (var i in animations) {
+    var animation = animations[i];
+    var item = '<li><a href="#" data-animation="' + animation + '">' + animation + '</a></li>';
+    $('#change-animation ul').append(item);
+  }
+});
+*/
+
+
+          //window.parent.postMessage( iframe_height, 'http://bootsnipp.com');
+        });
+    </script>
+</head>
+<body style="font-family: calibri">
+<img id="dreamhorse" style="width: 150px;height:150px;top: 0px;right: -7px;position: relative;z-index: 10000;" src="svg/dreamhorse.svg" />
+	<div class="container" style="    margin-top: -148px;">
+  <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:window.location.reload();">Dream Horse</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown mega-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Vehicles </a>
+          <ul class="dropdown-menu mega-dropdown-menu">
+          <li class="dropdown1 col-sm-3">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown Vechiles </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+          <li class="col-sm-3">Features Vechiles
+            
+          </li>
+          <li class="col-sm-3">Plus Vechiles
+            
+          </li>
+          <li class="col-sm-3">Much more Vechiles
+            
+          </li>
+        </ul>   
+        </li>
+        
+        <li class="dropdown mega-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services </a>
+          <ul class="dropdown-menu mega-dropdown-menu">
+    				<li class="dropdown1 col-sm-3">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown Products</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+					<li class="col-sm-3">Features Products
+						
+					</li>
+					<li class="col-sm-3">Plus Products
+						
+					</li>
+					<li class="col-sm-3">Much more Products
+						
+					</li>
+				</ul>		
+        <!--</li>
+         <li class="dropdown mega-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers</a>
+          <ul class="dropdown-menu mega-dropdown-menu">
+					<li class="dropdown1 col-sm-3">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown Customers</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+        
+					<li class="col-sm-3">Features Customers
+						
+					</li>
+					<li class="col-sm-3">Plus Customers
+						
+					</li> 
+					<li class="col-sm-3">Much more Customers
+						
+					</li>
+
+				</ul>		
+        </li>
+         
+         <li class="dropdown mega-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installers</a>
+          <ul class="dropdown-menu mega-dropdown-menu">
+					<li class="dropdown1 col-sm-3">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown Installers</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+					<li class="col-sm-3">Features Installers
+						
+					</li>
+					<li class="col-sm-3">Plus Installers
+						
+					</li>
+					<li class="col-sm-3">Much more Installers
+						
+					</li>
+				</ul>		
+        </li>
+         <li class="dropdown mega-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mangers </a>
+          <ul class="dropdown-menu mega-dropdown-menu">
+					<li class="dropdown1 col-sm-3">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown Mangers </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+					<li class="col-sm-3">Features Mangers
+						
+					</li>
+					<li class="col-sm-3">Plus Mangers
+						
+					</li>
+					<li class="col-sm-3">Much more Mangers
+						
+					</li>
+				</ul>		
+        </li>
+        <li class="dropdown mega-dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Schdules </a>
+          <ul class="dropdown-menu mega-dropdown-menu">
+					<li class="dropdown1 col-sm-3">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown Schdules </a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+					<li class="col-sm-3">Features Schdules
+						
+					</li>
+					<li class="col-sm-3">Plus Schdules
+						
+					</li>
+					<li class="col-sm-3">Much more Schdules
+						
+					</li>
+				</ul>		
+        </li>
+!-->
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li class="dropdown1">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Log In</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+<div id="page">
+    <!--<h1>
+      Skitter
+      <small>Slideshow for anytime!</small>
+    </h1>!-->
+    <div id="content">
+      <div class="skitter-large-box">
+        <div class="skitter skitter-large with-dots">
+          <ul>
+            <li><a href="#cube"><img src="Images/001.jpg" class="circles" /></a><div class="label_text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <!--<a href="#see-more" class="btn btn-small btn-yellow">See more</a>!--></p></div></li>
+            <li><a href="#cubeRandom"><img src="Images/002.jpg" class="circlesInside" /></a><div class="label_text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore officiis voluptatum reprehenderit vitae amet beatae dolorem labore dignissimos nesciunt. Harum, blanditiis suscipit beatae unde id non, necessitatibus praesentium nisi quidem. <!--<a href="#" class="btn btn-small btn-yellow">See more</a>!--></p></div></li>
+            <li><a href="#block"><img src="Images/003.jpg" class="circlesRotate" /></a><div class="label_text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <!--<a href="#" class="btn btn-small btn-yellow">See more</a>!--></p></div></li>
+            <li><a href="#cubeStop"><img src="Images/004.jpg" class="cube" /></a><div class="label_text"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit eos nihil corrupti inventore id culpa repellat molestiae quam at molestias. <!--<a href="#" class="btn btn-small btn-yellow">See more</a>!--></p></div></li> 
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!--<nav class="skitter-themes" id="change-theme">
+      <ul>
+        <li><a href="#" data-theme="" class="current">Default</a></li>
+        <li><a href="#" data-theme="square">Square</a></li>
+        <li><a href="#" data-theme="clean">Clean</a></li>
+        <li><a href="#" data-theme="minimalist">Minimalist</a></li>
+        <li><a href="#" data-theme="round">Round</a></li>
+      </ul>
+    </nav>
+    <nav class="skitter-animations" id="change-animation">
+      <h3>Animations</h3>
+      <ul></ul>
+    </nav>
+    <p class="see-documentation-p"><a href="http://www.skitter-slider.net/documentation" class="btn btn-green">See documentation</a></p>!-->
+  </div>
+	<script type="text/javascript">
+	$(document).ready(function(){
+    $(".dropdown1").hover(            
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown("400");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp("400");
+            $(this).toggleClass('open');       
+        }
+    );
+});
+	</script>
+</body>
+</html>
